@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Material Details</title>
+    <style>
+        /* Basic styling for the page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d3d3d3;
+            margin: 0;
+            padding: 0;
+            text-align: left;
+        }
+
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            background-color: #d3d3d3;
+        }
+
+        /* Box on the left */
+        .material-box {
+            width: 150px;
+            height: 150px;
+            border: 2px solid #666;
+            background-color: white;
+            float: left;
+            margin-right: 20px;
+            position: relative;
+        }
+
+        /* Small label inside the box */
+        .material-box span {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background-color: #666;
+            color: white;
+            padding: 5px;
+            font-size: 14px;
+        }
+
+        /* Heading and description on the right */
+        .material-info {
+            overflow: hidden;
+        }
+
+        .material-info h2 {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 0 0 10px 0;
+        }
+
+        .material-info p {
+            font-size: 14px;
+        }
+
+        .material-info p strong {
+            font-weight: bold;
+        }
+
+        /* Accordion sections */
+        .accordion {
+            margin-top: 20px;
+            background-color: #ccc;
+            border: 1px solid #666;
+            cursor: pointer;
+            padding: 10px;
+            text-align: left;
+            outline: none;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .accordion:hover {
+            background-color: #bbb;
+        }
+
+        .accordion:after {
+            content: '\25BC'; /* Down arrow */
+            float: right;
+        }
+
+        .panel {
+            padding: 0 10px;
+            display: none;
+            background-color: #f1f1f1;
+            border-top: 1px solid #666;
+        }
+
+        .panel p {
+            margin: 10px 0;
+        }
+
+        .active:after {
+            content: '\25B2'; /* Up arrow */
+        }
+
+        .active + .panel {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Left box with label -->
+    <div class="material-box">
+    </div>
+
+    <!-- Right side heading and description -->
+    <div class="material-info">
+        <h2>ALUMINIUM</h2>
+        <p><strong>Description:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</p>
+    </div>
+
+    <div style="clear: both;"></div> <!-- Clear floats -->
+
+    <!-- Accordion sections -->
+    <button class="accordion">Application</button>
+    <div class="panel">
+        <p>Details about application.</p>
+    </div>
+
+    <button class="accordion">Properties</button>
+    <div class="panel">
+        <p>Details about properties.</p>
+    </div>
+
+    <button class="accordion">Sustainability</button>
+    <div class="panel">
+        <p>Details about sustainability.</p>
+    </div>
+
+    <button class="accordion">Manufacturer</button>
+    <div class="panel">
+        <p>Details about manufacturer.</p>
+    </div>
+</div>
+
+<script>
+    /* JavaScript to handle accordion behavior */    var acc = document.getElementsByClassName("accordion");
+    for (var i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
