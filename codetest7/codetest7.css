@@ -1,0 +1,8 @@
+.button-class{
+    background-color: aqua;
+    border: black;
+}
+
+.button-border{
+     border: 4px red dashed;
+}
